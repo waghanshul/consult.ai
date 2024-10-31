@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Improvement</title>
+    <style>
+        /* Existing Styles Remain Here (Unchanged) */
+        /* Import San Francisco Font (Apple's font) */
+        @import url('https://fonts.googleapis.com/css2?family=SF+Pro&display=swap');
+        
+        /* Global Styles */
+        body {
+            background-color: #222;
+            font-family: 'SF Pro', sans-serif;
+        }
+        
+        /* Container Styles (Golden Ratio applied for height) */
+       .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: calc(100vh - 50px);
+            padding-top: 50px;
+        }
+        
+        /* Header Styles (Adjusted for better spacing) */
+        header {
+            margin-bottom: calc(20px * 1.618);
+        }
+        
+        header h1 {
+            color: #ffffff;
+            text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+            font-size: 48px; /* Increased question font size */
+        }
+        
+        /* Card Container Styles (Golden Ratio for spacing) */
+       .card-container {
+            display: flex;
+            justify-content: center;
+            gap: calc(20px * 1.618);
+        }
+        
+        /* Card Styles (Smaller size, enhanced shadows) */
+       .card {
+            width: 200px; /* Reduced width to make cards smaller */
+            height: 220px; /* Adjusted height to maintain a balanced shape */
+            padding: 20px;
+            border: none;
+            border-radius: 10px;
+            background-color: #f7f7f7;
+            cursor: pointer;
+            transition: transform 0.15s, box-shadow 0.15s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* Enhanced 3D Shadow Effect with darker shadows */
+            box-shadow: 
+                0 0 10px rgba(0, 0, 0, 0.2),
+                0 0 20px rgba(0, 0, 0, 0.3),
+                inset 0 0 10px rgba(255, 255, 255, 0.1),
+                0 4px 8px rgba(0, 0, 0, 0.4),
+                0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+        
+       .card:hover {
+            transform: scale(1.05);
+            /* Enhanced Hover Shadow Effect with even darker shadows on hover */
+            box-shadow: 
+                0 0 15px rgba(0, 0, 0, 0.3),
+                0 0 30px rgba(0, 0, 0, 0.4),
+                inset 0 0 15px rgba(255, 255, 255, 0.2),
+                0 6px 12px rgba(0, 0, 0, 0.5),
+                0 8px 16px rgba(0, 0, 0, 0.6);
+        }
+        
+       .card h2 {
+            color: #333333;
+            font-size: 32px; /* Slightly increased card name font size */
+            margin-bottom: 10px;
+        }
+        
+       .card.description {
+            opacity: 0.7;
+            color: #666666;
+            pointer-events: none;
+            font-size: 16px;
+            text-align: center;
+        }
+        
+        /* New Styles for Multiple Select and Proceed Button */
+       .card {
+            cursor: default; /* Change cursor for multiple select */
+        }
+       .card.selected {
+            background-color: #75baff; /* Highlight selected cards */
+        }
+        #proceed-button {
+     margin-top: 60px;
+     padding: 12px 24px; /* Slightly more padding for better click area */
+     border: none;
+     border-radius: 10px; /* Match the card's border radius */
+     background-color: #83bbff; /* Initial background, matches card background */
+     color: #333333; /* Text color, consistent with card titles */
+     cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s, background-color 0.15s; /* Enhanced transition */
+     box-shadow: 
+        0 0 10px rgba(0, 0, 0, 0.2),
+        0 0 20px rgba(0, 0, 0, 0.3),
+        inset 0 0 10px rgba(255, 255, 255, 0.1),
+        0 4px 8px rgba(0, 0, 0, 0.4),
+        0 6px 12px rgba(0, 0, 0, 0.5); /* Shadow to match the card's depth */
+      }
+
+      #proceed-button:hover {
+     transform: scale(1.05);
+     background-color: #eee; /* Slightly lighter on hover */
+     /* Enhanced Hover Shadow Effect, similar to the cards */
+     box-shadow: 
+        0 0 15px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(0, 0, 0, 0.4),
+        inset 0 0 15px rgba(255, 255, 255, 0.2),
+        0 6px 12px rgba(0, 0, 0, 0.5),
+        0 8px 16px rgba(0, 0, 0, 0.6);
+      }
+
+     #proceed-button:disabled {
+     opacity: 0.6;
+     cursor: not-allowed;
+     box-shadow: none; /* Remove shadow on disable for clearer indication */
+     background-color: #ddd; /* Disabled state background */
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>What age group do you want your customers to be?</h1>
+        </header>
+        <div class="card-container">
+            <!-- Children Card -->
+            <div class="card" data-age-group="15 or less">
+              <h2>18-24</h2>
+              <p class="description">Youth</p>
+            </div>
+            
+            <!-- Teenagers Card -->
+            <div class="card" data-age-group="15-20">
+                <h2>25-34</h2>
+                <p class="description">Young Professionals</p>
+            </div>
+            
+            <!-- Youngsters Card -->
+            <div class="card" data-age-group="21-30">
+                <h2>35-44</h2>
+                <p class="description">Established Professionals</p>
+            </div>
+            
+            <!-- Family Card -->
+            <div class="card" data-age-group="30+">
+                <h2>All ages</h2>
+                <p class="description">Family Friendly, focus on families with children</p>
+            </div>
+        </div>
+        <button id="proceed-button" disabled>Proceed</button>
+    </div>
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+        const proceedButton = document.getElementById('proceed-button');
+        let selectedCards = [];
+
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('selected');
+                const ageGroup = card.getAttribute('data-age-group');
+                if (selectedCards.includes(ageGroup)) {
+                    selectedCards = selectedCards.filter(group => group!== ageGroup);
+                } else {
+                    selectedCards.push(ageGroup);
+                }
+                proceedButton.disabled = selectedCards.length === 0;
+            });
+        });
+
+        proceedButton.addEventListener('click', () => {
+            if (!proceedButton.disabled) {
+                alert(`Proceeding with selected age groups: ${selectedCards.join(', ')}`);
+                // Add your proceed logic here
+            }
+        });
+    </script>
+</body>
+</html>
