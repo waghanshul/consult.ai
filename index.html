@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Improvement</title>
+    <style>
+        /* Import San Francisco Font (Apple's font) */
+        @import url('https://fonts.googleapis.com/css2?family=SF+Pro&display=swap');
+        
+        /* Global Styles */
+        body {
+            background-color: #222;
+            font-family: 'SF Pro', sans-serif;
+        }
+        
+        /* Container Styles (Golden Ratio applied for height) */
+     .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: calc(100vh - 50px);
+            padding-top: 50px;
+        }
+        
+        /* Header Styles (Adjusted for better spacing) */
+        header {
+            margin-bottom: calc(20px * 1.618);
+        }
+        
+        header h1 {
+            color: #ffffff;
+            text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+            font-size: 48px; /* Increased question font size */
+        }
+        
+        /* Card Container Styles (Golden Ratio for spacing) */
+     .card-container {
+            display: flex;
+            justify-content: center;
+            gap: calc(20px * 1.618);
+        }
+        
+        /* Card Styles (Smaller size, enhanced shadows) */
+     .card {
+            width: 200px; /* Reduced width to make cards smaller */
+            height: 220px; /* Adjusted height to maintain a balanced shape */
+            padding: 20px;
+            border: none;
+            border-radius: 10px;
+            background-color: #f7f7f7;
+            cursor: pointer;
+            transition: transform 0.15s, box-shadow 0.15s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* Enhanced 3D Shadow Effect with darker shadows */
+            box-shadow: 
+                0 0 10px rgba(0, 0, 0, 0.2),
+                0 0 20px rgba(0, 0, 0, 0.3),
+                inset 0 0 10px rgba(255, 255, 255, 0.1),
+                0 4px 8px rgba(0, 0, 0, 0.4),
+                0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+        
+     .card:hover {
+            transform: scale(1.05);
+            /* Enhanced Hover Shadow Effect with even darker shadows on hover */
+            box-shadow: 
+                0 0 15px rgba(0, 0, 0, 0.3),
+                0 0 30px rgba(0, 0, 0, 0.4),
+                inset 0 0 15px rgba(255, 255, 255, 0.2),
+                0 6px 12px rgba(0, 0, 0, 0.5),
+                0 8px 16px rgba(0, 0, 0, 0.6);
+        }
+        
+     .card h2 {
+            color: #333333;
+            font-size: 32px; /* Slightly increased card name font size */
+            margin-bottom: 10px;
+        }
+        
+     .card.description {
+            opacity: 0.7;
+            color: #666666;
+            pointer-events: none;
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>In what area of your business you want to improve?</h1>
+        </header>
+        <div class="card-container">
+            <!-- Finance Card (Updated) -->
+             <div class="card" onclick="location.href = 'finance.html';">
+              <h2>Finance</h2>
+              <p class="description">How to manage your finances effectively?</p>
+         </div>
+            
+            <!-- Marketing Card -->
+            <div class="card" onclick="alert('Marketing Card Clicked!')">
+                <h2>Marketing</h2>
+                <p class="description">How to market your business?</p>
+            </div>
+            
+            <!-- Operations Card -->
+            <div class="card" onclick="alert('Operations Card Clicked!')">
+                <h2>Operations</h2>
+                <p class="description">How to optimize operations?</p>
+            </div>
+            
+            <!-- Branding Card -->
+            <div class="card" onclick="alert('Branding Card Clicked!')">
+                <h2>Branding</h2>
+                <p class="description">How to build a stronger brand?</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // No JavaScript changes needed for this update.
+    </script>
+</body>
+</html>
